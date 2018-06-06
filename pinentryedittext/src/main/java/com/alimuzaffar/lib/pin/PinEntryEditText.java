@@ -385,6 +385,11 @@ public class PinEntryEditText extends EditText {
             }
         } else {
             mPinBackground.setState(new int[]{-android.R.attr.state_focused});
+            if (isNext) {
+                mPinBackground.setState(new int[]{-android.R.attr.state_focused, android.R.attr.state_selected});
+            } else if (hasText) {
+                mPinBackground.setState(new int[]{-android.R.attr.state_focused, android.R.attr.state_checked});
+            }
         }
     }
 
